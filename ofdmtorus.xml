@@ -1,0 +1,171 @@
+<!--/*
+===========================================================================
+xDM-NetworkSimulator GPL Source Code
+Copyright (C) 2012 Vasileios Anagnostopoulos.
+This file is part of thexDM-NetworkSimulator Source Code (?xDM-NetworkSimulator Source Code?).  
+xDM-NetworkSimulator Source Code is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+xDM-NetworkSimulator Source Code is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+You should have received a copy of the GNU General Public License
+along with xDM-NetworkSimulator Source Code.  If not, see <http://www.gnu.org/licenses/>.
+In addition, the xDM-NetworkSimulator Source Code is also subject to certain additional terms. You should have received a copy of these additional terms immediately following the terms and conditions of the GNU General Public License which accompanied the Doom 3 Source Code.  If not, please request a copy in writing from id Software at the address below.
+If you have questions concerning this license or the applicable additional terms, you may contact in writing Vasileios Anagnostopoulos, Campani 3 Street, Athens Greece, POBOX 11252.
+===========================================================================
+-->
+<?xml version="1.0" encoding="UTF-8"?>
+
+<simulationPrefs>
+	<ofdmPrefs>		
+		<constraints>c:/workspace/multisimulator/tanyaformat_3.csv</constraints>									
+	</ofdmPrefs>	
+	<steadyMeasurementPrefs>  
+		<epoch>0</epoch>  
+		<iterations>40</iterations>
+		<availabilitysteps>5</availabilitysteps>
+		<startAvailability>0.9</startAvailability>
+		<stopAvailability>1.0</stopAvailability>	
+	</steadyMeasurementPrefs>
+	<dynamicMeasurementPrefs>  
+		<flowstep>1000</flowstep>
+		<epochsteps>20</epochsteps>
+		<startEpoch>0</startEpoch>
+		<stopEpoch>0</stopEpoch>
+	</dynamicMeasurementPrefs>
+	<protectionPrefs>
+		<protection>NOPROTECTION</protection>   
+		<mu>0</mu>    
+	</protectionPrefs>
+	<algorithmPrefs>
+		<name>ofdmUnsplitBF</name>
+		<parameters>				
+			<genericParam key="actualcost" value="DISTANCE"/>						
+			<genericParam key="selectioncost" value="HOPS"/>
+			<genericParam key="selectionstrategy" value="BF"/>																	
+      <genericParam key="kvalue" value="10"/>
+		</parameters>   
+	</algorithmPrefs>
+	<filePrefs>
+		<path>c:/workspace/multisimulator/pen-ofdm</path>
+	</filePrefs>
+	<networkPrefs> 
+		<nodes>25</nodes> 
+		<llrcount>80</llrcount>
+		<tranceivers>80</tranceivers> 
+		<mode>HCC</mode> 
+	</networkPrefs>
+	<topologyPrefs>		
+		<listOfLinkPrefs>
+			<linkPrefs>
+				<listOfGenericOrientations>
+					<genericOrientation bidirectional="true" from="0" to="1"/>
+					<genericOrientation bidirectional="true" from="1" to="2"/>
+					<genericOrientation bidirectional="true" from="2" to="3"/>
+					<genericOrientation bidirectional="true" from="3" to="4"/>
+					<genericOrientation bidirectional="true" from="4" to="0"/>
+					<genericOrientation bidirectional="true" from="5" to="6"/>
+					<genericOrientation bidirectional="true" from="6" to="7"/>
+					<genericOrientation bidirectional="true" from="7" to="8"/>
+					<genericOrientation bidirectional="true" from="8" to="9"/>
+					<genericOrientation bidirectional="true" from="9" to="5"/>
+					<genericOrientation bidirectional="true" from="10" to="11"/>
+					<genericOrientation bidirectional="true" from="11" to="12"/>
+					<genericOrientation bidirectional="true" from="12" to="13"/>
+					<genericOrientation bidirectional="true" from="13" to="14"/>
+					<genericOrientation bidirectional="true" from="14" to="10"/>
+					<genericOrientation bidirectional="true" from="15" to="16"/>
+					<genericOrientation bidirectional="true" from="16" to="17"/>
+					<genericOrientation bidirectional="true" from="17" to="18"/>
+					<genericOrientation bidirectional="true" from="18" to="19"/>
+					<genericOrientation bidirectional="true" from="19" to="15"/>
+					<genericOrientation bidirectional="true" from="20" to="21"/>
+					<genericOrientation bidirectional="true" from="21" to="22"/>
+					<genericOrientation bidirectional="true" from="22" to="23"/>
+					<genericOrientation bidirectional="true" from="23" to="24"/>
+					<genericOrientation bidirectional="true" from="24" to="20"/>
+					<genericOrientation bidirectional="true" from="0" to="5"/>
+					<genericOrientation bidirectional="true" from="5" to="10"/>
+					<genericOrientation bidirectional="true" from="10" to="15"/>
+					<genericOrientation bidirectional="true" from="15" to="20"/>
+					<genericOrientation bidirectional="true" from="20" to="0"/>
+					<genericOrientation bidirectional="true" from="1" to="6"/>
+					<genericOrientation bidirectional="true" from="6" to="11"/>
+					<genericOrientation bidirectional="true" from="11" to="16"/>
+					<genericOrientation bidirectional="true" from="16" to="21"/>
+					<genericOrientation bidirectional="true" from="21" to="1"/>
+					<genericOrientation bidirectional="true" from="2" to="7"/>
+					<genericOrientation bidirectional="true" from="7" to="12"/>
+					<genericOrientation bidirectional="true" from="12" to="17"/>
+					<genericOrientation bidirectional="true" from="17" to="22"/>
+					<genericOrientation bidirectional="true" from="22" to="2"/>
+					<genericOrientation bidirectional="true" from="3" to="8"/>
+					<genericOrientation bidirectional="true" from="8" to="13"/>
+					<genericOrientation bidirectional="true" from="13" to="18"/>
+					<genericOrientation bidirectional="true" from="18" to="23"/>
+					<genericOrientation bidirectional="true" from="23" to="3"/>
+					<genericOrientation bidirectional="true" from="4" to="9"/>
+					<genericOrientation bidirectional="true" from="9" to="14"/>
+					<genericOrientation bidirectional="true" from="14" to="19"/>
+					<genericOrientation bidirectional="true" from="19" to="24"/>
+					<genericOrientation bidirectional="true" from="24" to="4"/>					
+				</listOfGenericOrientations>
+				<linkCharacteristics copies="1" distance="3"  monitor="false"/>	
+			</linkPrefs>			
+		</listOfLinkPrefs>
+	</topologyPrefs>
+	<trafficPrefs>
+		<listOfPairInjectorPrefs>            			
+		</listOfPairInjectorPrefs>
+		<listOfNodeInjectorPrefs>
+			<nodeInjectorPrefs>
+				<generators>
+					<node>0</node>
+					<node>1</node>
+					<node>2</node>
+					<node>3</node>
+					<node>4</node>
+					<node>5</node>
+					<node>6</node>
+					<node>7</node>
+					<node>8</node>
+					<node>9</node>
+					<node>10</node>
+					<node>11</node>					
+					<node>12</node>
+					<node>13</node>
+					<node>14</node>
+					<node>15</node>
+					<node>16</node>
+					<node>17</node>
+					<node>18</node>
+					<node>19</node>
+					<node>20</node>
+					<node>21</node>
+					<node>22</node>
+					<node>23</node>
+					<node>24</node>
+				</generators>			
+				<bandwidth name="distroUniform" simXi="0.1">
+					<parameters>
+						<genericParam key="down" value="0"/>
+						<genericParam key="up" value="5"/>
+					</parameters>
+				</bandwidth>
+				<arrivalTime name="distroBernoulli" simXi="5">
+						<parameters>
+							<genericParam key="timeextent" value="1000"/>
+						</parameters>
+				</arrivalTime>
+				<serviceTime name="distroBernoulli" simXi="0.1">
+						<parameters>
+							<genericParam key="timeextent" value="1000"/>
+						</parameters>
+				</serviceTime>                    			
+			</nodeInjectorPrefs>			
+		</listOfNodeInjectorPrefs>
+	</trafficPrefs>
+</simulationPrefs>

@@ -1,0 +1,106 @@
+<!--/*
+===========================================================================
+xDM-NetworkSimulator GPL Source Code
+Copyright (C) 2012 Vasileios Anagnostopoulos.
+This file is part of thexDM-NetworkSimulator Source Code (?xDM-NetworkSimulator Source Code?).  
+xDM-NetworkSimulator Source Code is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+xDM-NetworkSimulator Source Code is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+You should have received a copy of the GNU General Public License
+along with xDM-NetworkSimulator Source Code.  If not, see <http://www.gnu.org/licenses/>.
+In addition, the xDM-NetworkSimulator Source Code is also subject to certain additional terms. You should have received a copy of these additional terms immediately following the terms and conditions of the GNU General Public License which accompanied the Doom 3 Source Code.  If not, please request a copy in writing from id Software at the address below.
+If you have questions concerning this license or the applicable additional terms, you may contact in writing Vasileios Anagnostopoulos, Campani 3 Street, Athens Greece, POBOX 11252.
+===========================================================================
+-->
+<?xml version="1.0" encoding="UTF-8"?>
+<simulationPrefs>
+	<ofdmPrefs>		
+		<constraints>c:/workspace/multisimulator/tanyaformat_3.csv</constraints>									
+	</ofdmPrefs>	
+	<steadyMeasurementPrefs>  
+		<epoch>0</epoch>  
+		<iterations>40</iterations>
+		<availabilitysteps>5</availabilitysteps>
+		<startAvailability>0.9</startAvailability>
+		<stopAvailability>1.0</stopAvailability>	
+	</steadyMeasurementPrefs>
+	<dynamicMeasurementPrefs>  
+		<timestep>1000</timestep>
+		<epochsteps>20</epochsteps>
+		<startEpoch>0</startEpoch>
+		<stopEpoch>0</stopEpoch>
+	</dynamicMeasurementPrefs>
+	<protectionPrefs>
+		<protection>NOPROTECTION</protection>   
+		<mu>0</mu>    
+	</protectionPrefs>
+	<algorithmPrefs>
+		<name>ofdmUnsplitYen</name>
+		<parameters>				
+			<genericParam key="actualcost" value="DISTANCE"/>						
+			<genericParam key="selectioncost" value="HOPS"/>
+			<genericParam key="selectionstrategy" value="BF"/>																	
+			<genericParam key="kvalue" value="10"/>
+		</parameters>   
+	</algorithmPrefs>
+	<filePrefs>
+		<path>c:/workspace/multisimulator/pen-ofdm</path>
+	</filePrefs>
+	<networkPrefs> 
+		<nodes>5</nodes> 
+		<llrcount>5</llrcount>
+		<tranceivers>80</tranceivers> 
+		<mode>HCC</mode> 
+	</networkPrefs>
+	<topologyPrefs>		
+		<listOfLinkPrefs>
+			<linkPrefs>
+				<listOfGenericOrientations>
+					<genericOrientation bidirectional="false" from="0" to="1"/>
+					<genericOrientation bidirectional="false" from="1" to="2"/>
+					<genericOrientation bidirectional="false" from="2" to="3"/>					
+				</listOfGenericOrientations>
+				<linkCharacteristics copies="1" distance="1"  monitor="false"/>	
+			</linkPrefs>	
+			<linkPrefs>
+				<listOfGenericOrientations>
+					<genericOrientation bidirectional="false" from="0" to="4"/>
+					<genericOrientation bidirectional="false" from="4" to="3"/>
+				</listOfGenericOrientations>
+				<linkCharacteristics copies="1" distance="2"  monitor="false"/>	
+			</linkPrefs>			
+		</listOfLinkPrefs>
+	</topologyPrefs>
+	<trafficPrefs>
+		<listOfPairInjectorPrefs>   
+			<pairInjectorPrefs>	  
+				<generators>
+					<genericOrientation bidirectional="false" from="0" to="3"/>									
+				</generators>			
+				<bandwidth name="distroUniform" simXi="0.1">
+					<parameters>
+						<genericParam key="down" value="1"/>
+						<genericParam key="up" value="6"/>
+					</parameters>
+				</bandwidth>
+				<arrivalTime name="distroBernoulli" simXi="5">
+					<parameters>
+						<genericParam key="timeextent" value="1000"/>
+					</parameters>
+				</arrivalTime>
+				<serviceTime name="distroBernoulli" simXi="0.1">
+					<parameters>
+						<genericParam key="timeextent" value="1000"/>
+					</parameters>
+				</serviceTime>                    			
+			</pairInjectorPrefs>	           			
+		</listOfPairInjectorPrefs>
+		<listOfNodeInjectorPrefs>
+		</listOfNodeInjectorPrefs>
+	</trafficPrefs>
+</simulationPrefs>
